@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\Customer.cs" />
+    <Compile Include="DAO\Slot.cs" />
     <Compile Include="FileAccess.cs" />
     <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="View\mainForm.cs">
@@ -82,7 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="DAO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
