@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace manage_customer
 {
-    class FileAccess
+    public static class FileAccess
     {
-        public void writeData(string path, string str)
+        public static void writeData(string path, string str)
         {
             try
             {
@@ -31,14 +31,18 @@ namespace manage_customer
             }
         }
 
-        public string readData(string path)
+        public static List<string> readData(string path)
         {
-            string result = "";
+            List<string> result = new List<string>();
+            string line;
             try
             {
                 FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
                 StreamReader sr = new StreamReader(fs);
-                result = sr.ReadToEnd();
+                while ((line = sr.ReadLine()) != null)
+                {
+                    result.Add(line);
+                }
                 sr.Close();
                 sr.Dispose();
                 fs.Close();

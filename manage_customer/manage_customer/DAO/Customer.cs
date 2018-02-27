@@ -21,6 +21,11 @@ namespace manage_customer.DAO
             this.Address = Address;
         }
 
+        public Customer(string str)
+        {
+            int index = str.IndexOf("\t");
+        }
+
         public string Id { get => _Id; set => _Id = value; }
         public string Name { get => _Name; set => _Name = value; }
         public string Phone { get => _Phone; set => _Phone = value; }
