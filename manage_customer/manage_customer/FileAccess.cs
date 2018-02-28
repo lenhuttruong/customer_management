@@ -27,7 +27,7 @@ namespace manage_customer
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can not add customer!");
+                MessageBox.Show("Can not add customer !");
             }
         }
 
@@ -50,7 +50,7 @@ namespace manage_customer
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Can not get customer!");
+                MessageBox.Show("Can not get customers !");
             }
             return result;
         }

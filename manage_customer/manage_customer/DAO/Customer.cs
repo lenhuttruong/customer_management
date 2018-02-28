@@ -13,6 +13,10 @@ namespace manage_customer.DAO
         private string _Phone;
         private string _Address;
 
+        public Customer()
+        {
+        }
+
         public Customer(string Id, string Name, string Phone, string Address)
         {
             this.Id = Id;
@@ -31,6 +35,11 @@ namespace manage_customer.DAO
                 this.Phone = listString[2];
                 this.Address = listString[3];
             }
+        }
+
+        public string convertToString()
+        {
+            return String.Concat(this.Id, "\t", this.Name, "\t", this.Phone, "\t", this.Address);
         }
 
         public string Id { get => _Id; set => _Id = value; }

@@ -49,6 +49,7 @@
     <Compile Include="DAO\Slot.cs" />
     <Compile Include="FileAccess.cs" />
     <Compile Include="Model\CustomerModel.cs" />
+    <Compile Include="Model\SlotModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

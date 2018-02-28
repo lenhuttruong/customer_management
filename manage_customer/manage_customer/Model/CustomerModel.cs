@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace manage_customer.Model
 {
@@ -15,7 +16,15 @@ namespace manage_customer.Model
         {
             List<Customer> result = new List<Customer>();
             List<string> data = new List<string>();
-            data = FileAccess.readData(customerPath);
+            try
+            {
+                data = FileAccess.readData(customerPath);
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show("Can not get customers !");
+            }
+            
             Customer customer;
             foreach (string line in data)
             {
@@ -23,6 +32,21 @@ namespace manage_customer.Model
                 result.Add(customer);
             }
             return result;
+        }
+
+        public Boolean addCustomer(Customer customer)
+        {
+            string str = customer.convertToString();
+            try
+            {
+                FileAccess.writeData(customerPath, str);
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show("Can not add customer !");
+                return false;
+            }
+            return true;
         }
     }
 }
