@@ -23,7 +23,14 @@ namespace manage_customer.DAO
 
         public Customer(string str)
         {
-            int index = str.IndexOf("\t");
+            string[] listString = str.Split('\t');
+            if(listString.Length == 4)
+            {
+                this.Id = listString[0];
+                this.Name = listString[1];
+                this.Phone = listString[2];
+                this.Address = listString[3];
+            }
         }
 
         public string Id { get => _Id; set => _Id = value; }

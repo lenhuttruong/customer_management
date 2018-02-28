@@ -11,11 +11,18 @@ namespace manage_customer.Model
     class CustomerModel
     {
         private static string customerPath = Directory.GetCurrentDirectory();
-        public Customer[] getAllCustomer()
+        public List<Customer> getAllCustomer()
         {
+            List<Customer> result = new List<Customer>();
             List<string> data = new List<string>();
             data = FileAccess.readData(customerPath);
-            return null;
+            Customer customer;
+            foreach (string line in data)
+            {
+                customer = new Customer(line);
+                result.Add(customer);
+            }
+            return result;
         }
     }
 }
