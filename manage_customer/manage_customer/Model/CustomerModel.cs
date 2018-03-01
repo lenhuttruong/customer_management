@@ -39,11 +39,40 @@ namespace manage_customer.Model
             string str = customer.convertToString();
             try
             {
-                FileAccess.writeData(customerPath, str);
+                FileAccess.insertData(customerPath, str);
             }
             catch(Exception Ex)
             {
                 MessageBox.Show("Can not add customer !");
+                return false;
+            }
+            return true;
+        }
+
+        public Boolean editCustomer(Customer customer)
+        {
+            string str = customer.convertToString();
+            try
+            {
+                FileAccess.editData(customerPath, customer.Id, str);
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show("Can not edit customer !");
+                return false;
+            }
+            return true;
+        }
+
+        public Boolean deleteCustomer(string id)
+        {
+            try
+            {
+                FileAccess.deleteData(customerPath, id);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Can not delete customer !");
                 return false;
             }
             return true;
