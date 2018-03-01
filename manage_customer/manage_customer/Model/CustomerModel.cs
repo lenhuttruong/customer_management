@@ -11,7 +11,7 @@ namespace manage_customer.Model
 {
     class CustomerModel
     {
-        private static string customerPath = Directory.GetCurrentDirectory();
+        private static string customerPath = Directory.GetCurrentDirectory() + "\\customer.dat";
         public List<Customer> getAllCustomer()
         {
             List<Customer> result = new List<Customer>();
@@ -25,6 +25,28 @@ namespace manage_customer.Model
                 MessageBox.Show("Can not get customers !");
             }
             
+            Customer customer;
+            foreach (string line in data)
+            {
+                customer = new Customer(line);
+                result.Add(customer);
+            }
+            return result;
+        }
+
+        public List<Customer> getBySearchString(string searchString)
+        {
+            List<Customer> result = new List<Customer>();
+            List<string> data = new List<string>();
+            try
+            {
+                data = FileAccess.findData(customerPath, searchString);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Can not find customer !");
+            }
+
             Customer customer;
             foreach (string line in data)
             {

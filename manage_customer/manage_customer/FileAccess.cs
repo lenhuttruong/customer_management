@@ -98,5 +98,31 @@ namespace manage_customer
             }
             return result;
         }
+
+        public static List<string> findData(string path, string str)
+        {
+            List<string> result = new List<string>();
+            string line;
+            try
+            {
+                FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
+                StreamReader sr = new StreamReader(fs);
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (line.IndexOf(str) != -1)
+                    {
+                        result.Add(line);
+                    }
+                }
+                sr.Close();
+                sr.Dispose();
+                fs.Close();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+            }
+            return result;
+        }
     }
 }

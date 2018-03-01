@@ -34,6 +34,28 @@ namespace manage_customer.Model
             return result;
         }
 
+        public List<Customer> getBySearchString(string searchString)
+        {
+            List<Customer> result = new List<Customer>();
+            List<string> data = new List<string>();
+            try
+            {
+                data = FileAccess.findData(slotPath, searchString);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Can not find slot !");
+            }
+
+            Customer customer;
+            foreach (string line in data)
+            {
+                customer = new Customer(line);
+                result.Add(customer);
+            }
+            return result;
+        }
+
         public Boolean addSlot(Slot slot)
         {
             string str = slot.convertToString();
