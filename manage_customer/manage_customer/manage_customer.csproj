@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="DAO\Customer.cs" />
     <Compile Include="DAO\Slot.cs" />
     <Compile Include="FileAccess.cs" />
@@ -75,7 +76,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
