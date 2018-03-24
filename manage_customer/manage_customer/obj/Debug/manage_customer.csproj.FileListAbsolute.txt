@@ -7,3 +7,13 @@ E:\boss\project\manage_customer\manage_customer\obj\Debug\manage_customer.csproj
 E:\boss\project\manage_customer\manage_customer\obj\Debug\manage_customer.csproj.CoreCompileInputs.cache
 E:\boss\project\manage_customer\manage_customer\obj\Debug\manage_customer.exe
 E:\boss\project\manage_customer\manage_customer\obj\Debug\manage_customer.pdb
+E:\boss\project\customer_management\manage_customer\manage_customer\obj\Debug\manage_customer.csprojResolveAssemblyReference.cache
+E:\boss\project\customer_management\manage_customer\manage_customer\obj\Debug\manage_customer.Properties.Resources.resources
+E:\boss\project\customer_management\manage_customer\manage_customer\obj\Debug\manage_customer.View.mainForm.resources
+E:\boss\project\customer_management\manage_customer\manage_customer\obj\Debug\manage_customer.csproj.GenerateResource.Cache
+E:\boss\project\customer_management\manage_customer\manage_customer\obj\Debug\manage_customer.csproj.CoreCompileInputs.cache
+E:\boss\project\customer_management\manage_customer\manage_customer\bin\Debug\manage_customer.exe.config
+E:\boss\project\customer_management\manage_customer\manage_customer\bin\Debug\manage_customer.exe
+E:\boss\project\customer_management\manage_customer\manage_customer\bin\Debug\manage_customer.pdb
+E:\boss\project\customer_management\manage_customer\manage_customer\obj\Debug\manage_customer.exe
+E:\boss\project\customer_management\manage_customer\manage_customer\obj\Debug\manage_customer.pdb

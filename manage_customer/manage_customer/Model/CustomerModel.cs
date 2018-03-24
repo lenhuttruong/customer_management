@@ -37,21 +37,24 @@ namespace manage_customer.Model
         public List<Customer> getBySearchString(string searchString)
         {
             List<Customer> result = new List<Customer>();
-            List<string> data = new List<string>();
-            try
+            if (!searchString.Equals(""))
             {
-                data = FileAccess.findData(customerPath, searchString);
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show("Can not find customer !");
-            }
+                List<string> data = new List<string>();
+                try
+                {
+                    data = FileAccess.findData(customerPath, searchString);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Can not find customer !");
+                }
 
-            Customer customer;
-            foreach (string line in data)
-            {
-                customer = new Customer(line);
-                result.Add(customer);
+                Customer customer;
+                foreach (string line in data)
+                {
+                    customer = new Customer(line);
+                    result.Add(customer);
+                }
             }
             return result;
         }

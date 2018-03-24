@@ -34,24 +34,27 @@ namespace manage_customer.Model
             return result;
         }
 
-        public List<Customer> getBySearchString(string searchString)
+        public List<Slot> getBySearchString(string searchString)
         {
-            List<Customer> result = new List<Customer>();
-            List<string> data = new List<string>();
-            try
+            List<Slot> result = new List<Slot>();
+            if (!searchString.Equals(""))
             {
-                data = FileAccess.findData(slotPath, searchString);
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show("Can not find slot !");
-            }
+                List<string> data = new List<string>();
+                try
+                {
+                    data = FileAccess.findData(slotPath, searchString);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Can not find slot !");
+                }
 
-            Customer customer;
-            foreach (string line in data)
-            {
-                customer = new Customer(line);
-                result.Add(customer);
+                Slot slot;
+                foreach (string line in data)
+                {
+                    slot = new Slot(line);
+                    result.Add(slot);
+                }
             }
             return result;
         }
